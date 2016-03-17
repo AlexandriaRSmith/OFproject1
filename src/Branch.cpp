@@ -13,9 +13,8 @@
 void Branch::drawBranch(float length, float theta){
     float treeShiftValue = cos(ofGetElapsedTimef()) * 5;
     
-    
-    ofLine(0 , (0+ tan(40)), 0 , (-length + treeShiftValue));
-    //ofLine((0+ tan(40)) , (0+ tan(40)), (0+ tan(40)) , (-length + treeShiftValue));
+    ofRotate(ofGetElapsedTimef()); 
+    ofLine(0 , 0, 0 , (-length + treeShiftValue));
 
     ofTranslate(0, -length);
     
@@ -24,7 +23,7 @@ void Branch::drawBranch(float length, float theta){
     length = length*.74;  ///.759
     
     
-    if(length>2){
+    if(length>1.5){
         
         
         ofPushMatrix();
@@ -68,6 +67,8 @@ void Branch::draw(){
     ofSetColor(218);
     ofFill();
     drawBranch(100, 30);
+    
+    
     //------------
     ofTranslate(0, 100);
     ofRotate(45);
